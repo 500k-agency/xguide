@@ -1,7 +1,7 @@
 {
-  "name": "500k.agency",
+  "name": "xguide.me",
   "version": "1.0.0",
-  "description": "Landing and SEO content for 500k agency.",
+  "description": "The guidebook for Mastering Growth on X",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
