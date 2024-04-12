@@ -59,52 +59,109 @@ tags:
 
 <div class="section">
   <div class="container testimonials">
-    <div class="testimonial-item">
-      <img src="assets/testimonial-1.png" />
-    </div>
-    <div class="testimonial-item">
-      <img src="assets/testimonial-2.png" />
-    </div>
-    <div class="testimonial-item">
-      <img src="assets/testimonial-3.png" />
-    </div>
-    <div class="testimonial-item">
-      <img src="assets/testimonial-4.png" />
-    </div>
-    <div class="testimonial-item">
-      <img src="assets/testimonial-5.png" />
-    </div>
-    <div class="testimonial-item">
-      <img src="assets/testimonial-6.png" />
+    <div class="testimonial__group">
+      <div class="testimonial-item">
+        <img src="assets/testimonial-1.png">
+      </div>
+      <div class="testimonial-item">
+        <img src="assets/testimonial-2.png">
+      </div>
+      <div class="testimonial-item">
+        <img src="assets/testimonial-3.png">
+      </div>
+      <div class="testimonial-item">
+        <img src="assets/testimonial-4.png">
+      </div>
+      <div class="testimonial-item">
+        <img src="assets/testimonial-5.png">
+      </div>
+      <div class="testimonial-item">
+        <img src="assets/testimonial-6.png">
+      </div>
     </div>
 
     <!-- just mirror of content above for marquee effect -->
-    <div class="testimonial-item">
-      <img src="assets/testimonial-1.png" />
-    </div>
-    <div class="testimonial-item">
-      <img src="assets/testimonial-2.png" />
-    </div>
-    <div class="testimonial-item">
-      <img src="assets/testimonial-3.png" />
-    </div>
-    <div class="testimonial-item">
-      <img src="assets/testimonial-4.png" />
-    </div>
-    <div class="testimonial-item">
-      <img src="assets/testimonial-5.png" />
-    </div>
-    <div class="testimonial-item">
-      <img src="assets/testimonial-6.png" />
+    <div class="testimonial__group" aria-hidden="true">
+      <div class="testimonial-item">
+        <img src="assets/testimonial-1.png">
+      </div>
+      <div class="testimonial-item">
+        <img src="assets/testimonial-2.png">
+      </div>
+      <div class="testimonial-item">
+        <img src="assets/testimonial-3.png">
+      </div>
+      <div class="testimonial-item">
+        <img src="assets/testimonial-4.png">
+      </div>
+      <div class="testimonial-item">
+        <img src="assets/testimonial-5.png">
+      </div>
+      <div class="testimonial-item">
+        <img src="assets/testimonial-6.png">
+      </div>
     </div>
   </div>
 </div>
 
-  <div class="help">Need help?&nbsp;Email <a href="#" class="link">paul@spacestationlabs.ltd</a></div>
+<div class="section">
+  <div class="container container-center payment">
+    <div class="payment__card">
+      <div class="payment__header">
+        <p class="body2">Growth</p>
+        <h3>$9.00</h3>
+        <p class="subtitle">One-time purchase</p>
+      </div>
+      <hr>
+      <div class="payment__body">
+        <div class="payment__item">
+          <svg>
+            <use xlink:href="#feature" />
+          </svg>
+          <p>Instant Access</p>
+        </div>
+        <div class="payment__item">
+          <svg>
+            <use xlink:href="#feature" />
+          </svg>
+          <p>Notion template</p>
+        </div>
+        <div class="payment__item">
+          <svg>
+            <use xlink:href="#feature" />
+          </svg>
+          <p>20 modules</p>
+        </div>
+        <div class="payment__item">
+          <svg>
+            <use xlink:href="#feature" />
+          </svg>
+          <p>One-time purchase</p>
+        </div>
+        <div class="payment__item">
+          <svg>
+            <use xlink:href="#feature" />
+          </svg>
+          <p>Future updates</p>
+        </div>
+
+        <button id="btn-read-secondary" class="btn-primary btn-read-now">Get the Guide</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<svg style="display: none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <symbol id="feature" viewBox="0 0 16 16">
+      <path d="M7.99998 1.83325C4.32398 1.83325 1.33331 4.82392 1.33331 8.49992C1.33331 12.1759 4.32398 15.1666 7.99998 15.1666C11.676 15.1666 14.6666 12.1759 14.6666 8.49992C14.6666 4.82392 11.676 1.83325 7.99998 1.83325ZM6.66731 11.4419L4.19198 8.97192L5.13331 8.02792L6.66598 9.55792L10.1953 6.02859L11.138 6.97125L6.66731 11.4419Z" fill="#31AD12"/>
+    </symbol>
+  </defs>
+</svg>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const fullHeightPct = 0.8
+    const fullHeightPct = 0.9;
     const textContainer = document.getElementById('xgame');
     const text = textContainer.innerText;
     textContainer.innerHTML = ''; // Clear initial text
@@ -113,6 +170,7 @@ tags:
     for (let char of text) {
       let span = document.createElement('span');
       span.style.color = 'rgba(0,0,0,0.125)';
+      span.style.fontSize = screen.width < 600 ? '48px' : '24px';
       span.textContent = char;
       textContainer.appendChild(span);
     }
@@ -135,6 +193,9 @@ tags:
         } else {
           spans[i].style.color = `rgb(0, 0, 0, ${scrollPercentage})`;
         }
+        if (screen.width > 600) {
+          spans[i].style.fontSize = Math.min(24 + 50 * scrollPercentage, 64) + 'px';
+        }
       }
     }
 
@@ -146,7 +207,7 @@ tags:
     if (typeof gtag !== 'undefined') {
       gtag('event', 'click', {
         event_category: 'Primary',
-        event_label: 'Get to playbook',
+        event_label: 'Guide my X',
       });
     }
     document.getElementById('btn-read-secondary').scrollIntoView({
@@ -160,19 +221,9 @@ tags:
     if (typeof gtag !== 'undefined') {
       gtag('event', 'click', {
         event_category: 'Secondary',
-        event_label: 'Get the package',
+        event_label: 'Get the Guide',
       });
     }
-    window.open('https://buy.stripe.com/eVaeWc15y64d3ao28g');
-  });
-
-  document.getElementById('btn-read-book').addEventListener('click', function () {
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'click', {
-        event_category: 'Secondary',
-        event_label: 'Get the book',
-      });
-    }
-    window.open('https://buy.stripe.com/cN2eWcbKcbox12gaEK');
+    window.open('');
   });
 </script>
