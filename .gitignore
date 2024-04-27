@@ -2,6 +2,7 @@
 .envrc
 _site
 _work
+.bundle
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
@@ -10,3 +11,4 @@ node_modules
 
 Gemfile.lock
 yarn.lock
+pnpm-lock.yaml
