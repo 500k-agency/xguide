@@ -279,7 +279,7 @@ a {
 
 .payment {
   display: flex;
-  padding: 9rem 0;
+  padding: 3rem 0;
 
   @include media-query($on-palm) {
     padding: 9rem 5%;
