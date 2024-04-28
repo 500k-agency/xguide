@@ -117,7 +117,7 @@ a {
   background-size: cover;
 
   h1 {
-    text-shadow: 0px 0px 16px rgba(255, 255, 255, 0.6);
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.6);
     margin: 24px 0;
   }
 
@@ -211,8 +211,8 @@ a {
 :root {
   --marquee-size: clamp(10rem, 1rem + 40vmin, 30rem);
   --marquee-size-palm: clamp(25rem, 1rem + 100vmin, 75rem);
-  --marquee-gap: calc(var(--marquee-size) / 14);
-  --marquee-duration: 60s;
+  --marquee-gap: calc(var(--marquee-size) / 100);
+  --marquee-duration: 30s;
   --marquee-scroll-start: 0;
   --marquee-scroll-end: calc(-100% - var(--marquee-gap));
   --marquee-mask-image: linear-gradient(
@@ -254,6 +254,8 @@ a {
 .testimonial-item {
   aspect-ratio: 16/9;
   max-width: #{marq(size)};
+  display: flex;
+  align-items: center;
 
   @include media-query($on-palm) {
     max-width: #{marq(size-palm)};
